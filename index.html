@@ -2,13 +2,13 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>साखरपुडा समारंभ | Engagement Ceremony</title>
   
-  <!-- गुगल फॉन्ट्स (मराठी व इंग्रजी दोन्हीसाठी) -->
+  <!-- गुगल फॉन्ट्स -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Mukta:wght@300;400;600;700;800&family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Mukta:wght@300;400;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
   <!-- फॉन्ट ऑसम आयकॉन्स -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -26,23 +26,28 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
     }
 
     body {
       background-color: #241707;
       background-image: 
-        radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 60%),
-        radial-gradient(circle at 10% 80%, rgba(122, 21, 27, 0.35) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(8, 105, 114, 0.25) 0%, transparent 50%);
-      font-family: 'Mukta', 'Playfair Display', sans-serif;
+        radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(122, 21, 27, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(8, 105, 114, 0.25) 0%, transparent 50%);
+      font-family: 'Mukta', sans-serif;
       color: var(--text-dark);
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 20px 10px;
+      padding: 8px 8px 30px;
       position: relative;
-      overflow-x: hidden;
     }
 
     /* पुष्पवृष्टी कॅन्व्हास */
@@ -56,68 +61,73 @@
       z-index: 99;
     }
 
-    /* वरची कंट्रोल पट्टी (भाषा, संगीत, पुष्पवृष्टी) */
+    /* वरची मोबाईल कंट्रोल पट्टी */
     .top-control-bar {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      z-index: 100;
+      width: 100%;
+      max-width: 520px;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 4px 10px;
+      z-index: 100;
+      position: sticky;
+      top: 4px;
     }
 
     .ctrl-btn {
       background: rgba(255, 253, 247, 0.95);
-      border: 2px solid var(--gold-primary);
+      border: 1.5px solid var(--gold-primary);
       color: var(--maroon);
-      padding: 7px 14px;
-      border-radius: 30px;
+      padding: 6px 12px;
+      border-radius: 25px;
       font-size: 13px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+      transition: all 0.2s ease;
     }
-    .ctrl-btn:hover {
-      transform: translateY(-2px);
-      background: var(--gold-primary);
-      color: #fff;
+    .ctrl-btn:active {
+      transform: scale(0.96);
     }
     .lang-btn {
       background: #7a151b;
       color: #f7e7a9;
       border-color: #d4af37;
     }
-    .lang-btn:hover {
-      background: #961d24;
+
+    /* संगीत सुरू असताना इफेक्ट */
+    .audio-active {
+      background: #c59b27;
       color: #ffffff;
+      border-color: #fbf6ba;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
     }
 
-    /* मुख्य पत्रिका कार्ड */
+    /* मुख्य पत्रिका कार्ड (मोबाईल रिस्पॉन्सिव्ह) */
     .card-wrapper {
-      max-width: 680px;
       width: 100%;
+      max-width: 500px;
       background: var(--card-bg);
-      border-radius: 20px;
+      border-radius: 16px;
       position: relative;
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.4);
-      padding: 12px;
-      border: 3px solid #d4af37;
-      margin: 45px auto 25px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 18px rgba(212, 175, 55, 0.35);
+      padding: 7px;
+      border: 2px solid #d4af37;
+      margin: 0 auto;
     }
 
-    /* अंतर्गत नक्षीदार चौकट */
+    /* अंतर्गत चौकट */
     .card-inner {
-      border: 2px solid #b8860b;
-      border-radius: 14px;
-      padding: 42px 25px 35px;
-      background: radial-gradient(ellipse at center, #ffffff 0%, #fbf6e9 85%, #f4e8cc 100%);
+      border: 1.5px solid #b8860b;
+      border-radius: 12px;
+      padding: 24px 12px 20px;
+      background: radial-gradient(ellipse at center, #ffffff 0%, #fbf7ec 80%, #f5e9d0 100%);
       position: relative;
       text-align: center;
       overflow: hidden;
@@ -126,432 +136,381 @@
     /* कोपऱ्यातील डिझाईन */
     .corner-decor {
       position: absolute;
-      width: 65px;
-      height: 65px;
+      width: 42px;
+      height: 42px;
       pointer-events: none;
-      opacity: 0.85;
+      opacity: 0.8;
+      z-index: 1;
     }
-    .top-left { top: 6px; left: 6px; }
-    .top-right { top: 6px; right: 6px; transform: scaleX(-1); }
-    .bottom-left { bottom: 6px; left: 6px; transform: scaleY(-1); }
-    .bottom-right { bottom: 6px; right: 6px; transform: scale(-1); }
+    .top-left { top: 4px; left: 4px; }
+    .top-right { top: 4px; right: 4px; transform: scaleX(-1); }
+    .bottom-left { bottom: 4px; left: 4px; transform: scaleY(-1); }
+    .bottom-right { bottom: 4px; right: 4px; transform: scale(-1); }
 
-    /* मोर नक्षी आकृत्या */
+    /* मोर नक्षी (Non-overlapping) */
     .peacock-art {
       position: absolute;
-      width: 100px;
+      width: 58px;
       height: auto;
       pointer-events: none;
-      z-index: 2;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+      z-index: 1;
+      opacity: 0.7;
     }
-    .peacock-top-left { top: 15px; left: 10px; }
-    .peacock-bottom-right { bottom: 15px; right: 10px; }
+    .peacock-top-left { top: 8px; left: 6px; }
+    .peacock-bottom-right { bottom: 8px; right: 6px; }
 
-    /* श्री गणेशाय नमः विभाग */
+    /* श्री गणेशाय नमः */
     .ganpati-box {
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       position: relative;
-      z-index: 3;
+      z-index: 2;
     }
     .ganpati-img {
-      width: 80px;
-      height: 80px;
+      width: 65px;
+      height: 65px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 3px 6px rgba(184, 134, 11, 0.35));
     }
     .ganpati-text {
       font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 23px;
+      font-size: clamp(17px, 5vw, 21px);
       color: var(--maroon);
-      letter-spacing: 2px;
-      margin-top: 4px;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
       font-weight: 700;
     }
 
     /* मुख्य शीर्षक */
     .title-banner {
-      margin: 18px auto 22px;
+      margin: 10px auto 14px;
       position: relative;
-      display: inline-block;
+      z-index: 2;
     }
     .main-title {
-      font-family: 'Yatra One', 'Playfair Display', serif;
-      font-size: 40px;
+      font-family: 'Yatra One', 'Rozha One', serif;
+      font-size: clamp(25px, 7.5vw, 35px);
       font-weight: 700;
       color: #7a151b;
-      text-shadow: 2px 2px 0px #fff, 3px 3px 6px rgba(138, 90, 0, 0.3);
-      background: linear-gradient(180deg, #91151d 20%, #500a0e 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding: 0 15px;
-      letter-spacing: 1px;
+      text-shadow: 1px 1px 0px #fff, 2px 2px 5px rgba(138, 90, 0, 0.3);
+      line-height: 1.25;
+      padding: 0 4px;
     }
     .arch-divider {
-      width: 200px;
-      height: 16px;
+      width: 160px;
+      height: 12px;
       margin: 3px auto 0;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 25 0, 50 5 T 100 5' fill='none' stroke='%23c59b27' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='5' r='3' fill='%237a151b'/%3E%3C/svg%3E") no-repeat center;
       background-size: contain;
     }
 
-    /* वधू व वर तपशील */
+    /* वधू व वर विभाग */
     .couple-profile {
-      margin: 16px 0;
-      padding: 6px 15px;
+      margin: 10px 0;
+      padding: 4px 6px;
       position: relative;
-      z-index: 3;
+      z-index: 2;
     }
     .person-name {
       font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 32px;
+      font-size: clamp(22px, 6.5vw, 29px);
       color: var(--maroon);
       font-weight: 800;
-      margin-bottom: 4px;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+      margin-bottom: 3px;
+      line-height: 1.25;
+      word-break: break-word;
     }
     .salutation {
-      font-size: 22px;
+      font-size: clamp(16px, 4.5vw, 20px);
       color: #9c6e11;
       font-weight: 600;
     }
     .parents-info {
-      font-size: 19px;
+      font-size: clamp(15px, 4.2vw, 18px);
       font-weight: 600;
       color: #3f2e1a;
-      line-height: 1.5;
+      line-height: 1.45;
+      margin-top: 2px;
     }
     .address-info {
-      font-size: 16px;
+      font-size: clamp(13px, 3.7vw, 15px);
       color: #5d4831;
       margin-top: 2px;
       font-weight: 500;
+      line-height: 1.4;
     }
     .relation-badge {
       display: inline-block;
-      margin-top: 6px;
-      padding: 3px 18px;
+      margin-top: 5px;
+      padding: 2px 14px;
       background: rgba(197, 155, 39, 0.12);
       border: 1px solid rgba(197, 155, 39, 0.4);
-      border-radius: 20px;
-      font-size: 15px;
+      border-radius: 18px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--maroon);
     }
 
     /* अंगठ्यांचे चिन्ह */
     .rings-motif-box {
-      margin: 12px auto;
+      margin: 8px auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       position: relative;
+      z-index: 2;
     }
     .motif-line {
-      height: 2px;
+      height: 1.5px;
       flex-grow: 1;
-      max-width: 110px;
+      max-width: 65px;
       background: linear-gradient(90deg, transparent, #c59b27, transparent);
     }
     .rings-svg-wrap {
       background: radial-gradient(circle, #fff, #fdf4d7);
-      width: 55px;
-      height: 55px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 2px solid #d4af37;
+      border: 1.5px solid #d4af37;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
+      box-shadow: 0 3px 8px rgba(197, 155, 39, 0.25);
     }
 
     /* निमंत्रण मजकूर चौकट */
     .invitation-quote-box {
-      margin: 22px auto 18px;
-      background: rgba(255, 255, 255, 0.8);
+      margin: 15px auto 14px;
+      background: rgba(255, 255, 255, 0.85);
       border: 1px dashed #d4af37;
-      border-radius: 12px;
-      padding: 16px 20px;
-      max-width: 560px;
-      box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+      border-radius: 10px;
+      padding: 12px 10px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
     }
     .event-time-highlight {
-      font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 19px;
+      font-family: 'Rozha One', 'Mukta', serif;
+      font-size: clamp(15px, 4.2vw, 18px);
       color: #7a151b;
       font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.5;
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
     .cordial-text {
-      font-size: 17px;
+      font-size: clamp(13.5px, 3.8vw, 15.5px);
       color: #44321e;
-      line-height: 1.6;
+      line-height: 1.55;
       font-weight: 500;
     }
 
     /* काऊंटडाऊन टायमर */
     .countdown-section {
-      margin: 22px auto;
-      max-width: 500px;
+      margin: 14px auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
     }
     .countdown-title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       color: #9c6e11;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .timer-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 6px;
+      width: 100%;
     }
     .timer-card {
-      background: #fff;
-      border: 1.5px solid #d4af37;
-      border-radius: 10px;
-      padding: 8px 4px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      background: #ffffff;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      padding: 6px 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
     .timer-num {
       font-family: 'Cinzel', serif;
-      font-size: 25px;
+      font-size: clamp(18px, 5.5vw, 22px);
       font-weight: 800;
       color: var(--maroon);
       display: block;
       line-height: 1.1;
     }
     .timer-label {
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 600;
       color: #634b31;
     }
 
     /* कार्यस्थळ */
     .venue-card {
-      margin: 24px auto 18px;
+      margin: 18px auto 12px;
       background: #fff9ea;
-      border: 2px solid #c59b27;
-      border-radius: 12px;
-      padding: 16px 20px;
-      max-width: 500px;
+      border: 1.5px solid #c59b27;
+      border-radius: 10px;
+      padding: 14px 10px 10px;
+      width: 100%;
       position: relative;
+      z-index: 2;
     }
     .venue-badge {
       position: absolute;
-      top: -14px;
+      top: -12px;
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(135deg, #7a151b, #961d24);
       color: #fcedbb;
-      padding: 3px 22px;
-      border-radius: 20px;
+      padding: 2px 18px;
+      border-radius: 15px;
       font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 16px;
-      letter-spacing: 1px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
       border: 1px solid #d4af37;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      white-space: nowrap;
     }
     .venue-address {
-      font-size: 18px;
+      font-size: clamp(14px, 4vw, 17px);
       font-weight: 700;
       color: #3b2815;
-      margin-top: 6px;
-      line-height: 1.5;
+      margin-top: 4px;
+      line-height: 1.45;
     }
 
     /* निमंत्रक */
     .inviter-card {
-      margin: 18px auto 8px;
+      margin: 14px auto 6px;
       background: #fbf2db;
       border: 1px solid #d4af37;
-      border-radius: 10px;
-      padding: 12px 18px;
-      max-width: 460px;
+      border-radius: 8px;
+      padding: 9px 12px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
     }
     .inviter-badge {
       display: inline-block;
       font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 15px;
+      font-size: 13.5px;
       color: #7a151b;
       font-weight: 700;
       border-bottom: 1.5px solid #c59b27;
-      padding-bottom: 2px;
-      margin-bottom: 4px;
+      padding-bottom: 1px;
+      margin-bottom: 3px;
     }
     .inviter-names {
-      font-size: 19px;
+      font-size: clamp(15px, 4.2vw, 18px);
       font-weight: 700;
       color: #3f2a14;
+      line-height: 1.35;
     }
 
-    /* बटणे */
+    /* कृती बटणे */
     .action-button-group {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 24px;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 18px;
+      width: 100%;
       position: relative;
       z-index: 5;
     }
     .action-btn {
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 30px;
+      padding: 11px 16px;
+      border-radius: 25px;
       font-size: 15px;
       font-weight: 700;
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      transition: all 0.3s ease;
       cursor: pointer;
       border: none;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    .action-btn:active {
+      transform: scale(0.98);
     }
     .btn-maps {
       background: linear-gradient(135deg, #086972, #054a50);
       color: #ffffff;
-      box-shadow: 0 4px 12px rgba(8, 105, 114, 0.35);
-    }
-    .btn-maps:hover {
-      background: #054a50;
-      transform: translateY(-2px);
     }
     .btn-cal {
       background: linear-gradient(135deg, #c59b27, #9b7516);
       color: #ffffff;
-      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.35);
-    }
-    .btn-cal:hover {
-      background: #9b7516;
-      transform: translateY(-2px);
     }
     .btn-share {
       background: linear-gradient(135deg, #25d366, #128c7e);
       color: #ffffff;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    }
-    .btn-share:hover {
-      background: #128c7e;
-      transform: translateY(-2px);
-    }
-
-    /* मोबाईलसाठी रचना */
-    @media (max-width: 600px) {
-      .card-inner {
-        padding: 32px 14px 22px;
-      }
-      .main-title {
-        font-size: 30px;
-      }
-      .person-name {
-        font-size: 26px;
-      }
-      .salutation {
-        font-size: 19px;
-      }
-      .parents-info {
-        font-size: 16px;
-      }
-      .event-time-highlight {
-        font-size: 16px;
-      }
-      .peacock-art {
-        width: 75px;
-      }
-      .action-btn {
-        width: 100%;
-        justify-content: center;
-      }
-      .top-control-bar {
-        position: static;
-        margin-bottom: 15px;
-        justify-content: center;
-      }
-      .card-wrapper {
-        margin-top: 10px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- वरची नियंत्रण पट्टी: भाषा, संगीत आणि पुष्पवृष्टी -->
+  <!-- वरची कंट्रोल पट्टी -->
   <div class="top-control-bar">
     <button class="ctrl-btn lang-btn" id="langToggleBtn" onclick="toggleLanguage()">
       <i class="fa-solid fa-language"></i> <span id="langBtnText">English</span>
     </button>
-    <button class="ctrl-btn" id="audioToggleBtn" onclick="toggleShehnai()">
-      <i class="fa-solid fa-music"></i> <span id="audioBtnText">मंगल संगीत</span>
+    <!-- डीफॉल्ट सुरू आणि बटणावर थांबणारे ऑडिओ बटण -->
+    <button class="ctrl-btn audio-active" id="audioToggleBtn" onclick="toggleAudioButton()">
+      <i class="fa-solid fa-volume-high" id="audioIcon"></i> <span id="audioBtnText">संगीत थांबवा</span>
     </button>
     <button class="ctrl-btn" id="petalToggleBtn" onclick="togglePetals()">
       <i class="fa-solid fa-spa"></i> <span id="petalBtnText">पुष्पवृष्टी</span>
     </button>
   </div>
 
-  <!-- पुष्पवृष्टी ॲनिमेशन कॅन्व्हास -->
+  <!-- पुष्पवृष्टी कॅन्व्हास -->
   <canvas id="petalCanvas"></canvas>
 
   <!-- मुख्य पत्रिका -->
   <div class="card-wrapper">
     <div class="card-inner">
 
-      <!-- चारही कोपऱ्यांतील डिझाईन -->
+      <!-- चारही कोपऱ्यांतील नक्षी -->
       <svg class="corner-decor top-left" viewBox="0 0 100 100">
         <path d="M 0,0 L 50,0 C 30,10 10,30 0,50 Z" fill="#c59b27" />
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
-        <circle cx="20" cy="20" r="4" fill="#fcf6ba" />
       </svg>
       <svg class="corner-decor top-right" viewBox="0 0 100 100">
         <path d="M 0,0 L 50,0 C 30,10 10,30 0,50 Z" fill="#c59b27" />
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
-        <circle cx="20" cy="20" r="4" fill="#fcf6ba" />
       </svg>
       <svg class="corner-decor bottom-left" viewBox="0 0 100 100">
         <path d="M 0,0 L 50,0 C 30,10 10,30 0,50 Z" fill="#c59b27" />
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
-        <circle cx="20" cy="20" r="4" fill="#fcf6ba" />
       </svg>
       <svg class="corner-decor bottom-right" viewBox="0 0 100 100">
         <path d="M 0,0 L 50,0 C 30,10 10,30 0,50 Z" fill="#c59b27" />
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
-        <circle cx="20" cy="20" r="4" fill="#fcf6ba" />
       </svg>
 
       <!-- डावीकडील मोर -->
       <svg class="peacock-art peacock-top-left" viewBox="0 0 120 160">
-        <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972" opacity="0.85"/>
+        <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972"/>
         <circle cx="55" cy="30" r="8" fill="#c59b27"/>
-        <path d="M50,15 Q55,5 60,12" stroke="#c59b27" stroke-width="2" fill="none"/>
-        <circle cx="60" cy="11" r="2" fill="#7a151b"/>
-        <ellipse cx="40" cy="90" rx="15" ry="35" fill="#0a818d" opacity="0.6"/>
-        <circle cx="38" cy="95" r="5" fill="#f7e7a9"/>
-        <circle cx="38" cy="95" r="2.5" fill="#7a151b"/>
       </svg>
 
       <!-- उजवीकडील मोर -->
       <svg class="peacock-art peacock-bottom-right" viewBox="0 0 120 160">
         <g transform="scale(-1, 1) translate(-120, 0)">
-          <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972" opacity="0.85"/>
+          <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972"/>
           <circle cx="55" cy="30" r="8" fill="#c59b27"/>
-          <path d="M50,15 Q55,5 60,12" stroke="#c59b27" stroke-width="2" fill="none"/>
-          <circle cx="60" cy="11" r="2" fill="#7a151b"/>
-          <ellipse cx="40" cy="90" rx="15" ry="35" fill="#0a818d" opacity="0.6"/>
-          <circle cx="38" cy="95" r="5" fill="#f7e7a9"/>
-          <circle cx="38" cy="95" r="2.5" fill="#7a151b"/>
         </g>
       </svg>
 
       <!-- १. श्री गणेशाचे स्मरण -->
       <div class="ganpati-box">
         <div class="ganpati-img">
-          <svg viewBox="0 0 100 100" width="80" height="80">
+          <svg viewBox="0 0 100 100" width="65" height="65">
             <path d="M50,15 C55,15 62,18 64,25 C66,32 60,38 52,38 C45,38 40,32 40,25 C40,18 45,15 50,15 Z" fill="#c59b27" />
             <path d="M52,38 C56,42 64,48 64,60 C64,72 50,78 44,78 C38,78 35,74 38,70 C42,66 48,68 52,62 C55,58 54,46 50,42" fill="none" stroke="#7a151b" stroke-width="4.5" stroke-linecap="round"/>
             <path d="M36,28 C26,26 24,38 28,48 C32,54 38,50 38,45" fill="none" stroke="#c59b27" stroke-width="3.5" stroke-linecap="round"/>
@@ -565,7 +524,7 @@
         </div>
       </div>
 
-      <!-- २. मुख्य समारंभ शीर्षक -->
+      <!-- २. मुख्य शीर्षक -->
       <div class="title-banner">
         <h1 class="main-title" data-mr="साखरपुडा समारंभ" data-en="Engagement Ceremony">
           साखरपुडा समारंभ
@@ -573,7 +532,7 @@
         <div class="arch-divider"></div>
       </div>
 
-      <!-- ३. वधूची माहिती (Bride Details) -->
+      <!-- ३. वधूची माहिती -->
       <div class="couple-profile">
         <h2 class="person-name">
           <span class="salutation" data-mr="चि. सौ. का. " data-en="Chi. Sau. Ka. ">चि. सौ. का. </span>
@@ -590,11 +549,11 @@
         </div>
       </div>
 
-      <!-- ४. अंगठ्यांचे शुभ चिन्ह -->
+      <!-- ४. अंगठ्यांचे चिन्ह -->
       <div class="rings-motif-box">
         <div class="motif-line"></div>
         <div class="rings-svg-wrap">
-          <svg viewBox="0 0 100 80" width="38" height="38">
+          <svg viewBox="0 0 100 80" width="34" height="34">
             <circle cx="38" cy="45" r="22" fill="none" stroke="#d4af37" stroke-width="6"/>
             <circle cx="62" cy="45" r="22" fill="none" stroke="#e8c75f" stroke-width="6"/>
             <polygon points="62,13 68,22 56,22" fill="#086972"/>
@@ -604,7 +563,7 @@
         <div class="motif-line"></div>
       </div>
 
-      <!-- ५. वराची माहिती (Groom Details) -->
+      <!-- ५. वराची माहिती -->
       <div class="couple-profile">
         <h2 class="person-name">
           <span class="salutation" data-mr="चि. " data-en="Chi. ">चि. </span>
@@ -621,10 +580,10 @@
         </div>
       </div>
 
-      <!-- ६. निमंत्रण व तारीख-वेळ -->
+      <!-- ६. निमंत्रण व वेळ -->
       <div class="invitation-quote-box">
         <div class="event-time-highlight">
-          <i class="fa-regular fa-calendar-check" style="color: #c59b27; margin-right: 6px;"></i>
+          <i class="fa-regular fa-calendar-check" style="color: #c59b27; margin-right: 5px;"></i>
           <span data-mr="रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ७:०० वाजता" data-en="Sunday, 01 November 2026, at 7:00 PM">
             रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ७:०० वाजता
           </span>
@@ -661,7 +620,7 @@
         </div>
       </div>
 
-      <!-- ८. कार्यस्थळ (Venue) -->
+      <!-- ८. कार्यस्थळ -->
       <div class="venue-card">
         <div class="venue-badge">
           <i class="fa-solid fa-location-dot"></i> 
@@ -673,7 +632,7 @@
         </div>
       </div>
 
-      <!-- ९. निमंत्रक (Inviter) -->
+      <!-- ९. निमंत्रक -->
       <div class="inviter-card">
         <div class="inviter-badge" data-mr="निमंत्रक" data-en="Cordial Inviter">निमंत्रक</div>
         <div class="inviter-names" data-mr="समस्त तावडे आणि नलावडे परिवार" data-en="Tawade and Nalawade Family">
@@ -681,7 +640,7 @@
         </div>
       </div>
 
-      <!-- १०. कृती बटणे (Navigation, Calendar, WhatsApp) -->
+      <!-- १०. ॲक्शन बटणे -->
       <div class="action-button-group">
         <a 
           href="https://www.google.com/maps/search/?api=1&query=%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
@@ -693,7 +652,6 @@
         </a>
 
         <a 
-          id="calendarLink"
           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD+-+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%B5+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80&dates=20261101T133000Z/20261101T173000Z&details=%E0%A4%9A%E0%A4%BF.+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%86%E0%A4%A3%E0%A4%BF+%E0%A4%9A%E0%A4%BF.+%E0%A4%B8%E0%A5%8c.+%E0%A4%95%E0%A4%BE.+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80+%E0%A4%AF%E0%A4%BE%E0%A4%82%E0%A4%9A%E0%A4%BE+%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD&location=%E0%A4%AE%E0%A5%81.+%E0%A4%AA%E0%A5%8B.+%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE.+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%9C%E0%A4%BF.+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
           target="_blank" 
           class="action-btn btn-cal"
@@ -718,7 +676,7 @@
 
   <script>
     // ------------------------------------------------------------------------
-    // १. भाषा बदलण्याची यंत्रणा (Language Switcher: Marathi <-> English)
+    // १. भाषा बदलण्याची यंत्रणा (Marathi <-> English)
     // ------------------------------------------------------------------------
     let currentLang = 'mr';
 
@@ -727,37 +685,24 @@
       const translatableElements = document.querySelectorAll('[data-mr]');
       
       translatableElements.forEach(el => {
-        if (lang === 'mr') {
-          el.innerHTML = el.getAttribute('data-mr');
-        } else {
-          el.innerHTML = el.getAttribute('data-en');
-        }
+        el.innerHTML = (lang === 'mr') ? el.getAttribute('data-mr') : el.getAttribute('data-en');
       });
 
-      // बटण आणि टायमरचे भाषांतर अपडेट करा
-      const langBtnText = document.getElementById("langBtnText");
-      langBtnText.innerText = (lang === 'mr') ? "English" : "मराठी";
+      document.getElementById("langBtnText").innerText = (lang === 'mr') ? "English" : "मराठी";
 
-      const audioBtnText = document.getElementById("audioBtnText");
-      if (!isPlaying) {
-        audioBtnText.innerText = (lang === 'mr') ? "मंगल संगीत" : "Sacred Music";
-      } else {
-        audioBtnText.innerText = (lang === 'mr') ? "संगीत थांबवा" : "Stop Music";
-      }
+      updateAudioButtonUI();
 
       const petalBtnText = document.getElementById("petalBtnText");
       petalBtnText.innerText = petalsActive 
         ? (lang === 'mr' ? "पुष्पवृष्टी" : "Petals") 
-        : (lang === 'mr' ? "पुष्पवृष्टी सुरू करा" : "Start Petals");
+        : (lang === 'mr' ? "पुष्पवृष्टी सुरू" : "Start Petals");
 
-      // व्हॉट्सॲप मेसेज अपडेट करा
       updateWhatsAppLink();
       updateCountdown();
     }
 
     function toggleLanguage() {
-      const nextLang = (currentLang === 'mr') ? 'en' : 'mr';
-      setLanguage(nextLang);
+      setLanguage(currentLang === 'mr' ? 'en' : 'mr');
     }
 
     function updateWhatsAppLink() {
@@ -765,13 +710,13 @@
       if (currentLang === 'mr') {
         msg = "॥ श्री गणेशाय नमः ॥\n\n*साखरपुडा समारंभ*\nचि. सौ. का. वैष्णवी आणि चि. शुभम\n\n📅 रविवार, ०१ नोव्हेंबर २०२६, सायं. ७:०० वाजता\n📍 कार्यस्थळ: मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी\n\nतरी आपण सहकुटुंब उपस्थित राहून वधू-वरांना शुभाशीर्वाद द्यावेत, ही नम्र विनंती.\n\n- समस्त तावडे आणि नलावडे परिवार";
       } else {
-        msg = "|| Shree Ganeshay Namah ||\n\n*Engagement Ceremony*\nChi. Sau. Ka. Vaishnavi & Chi. Shubham\n\n📅 Sunday, 01 November 2026, 7:00 PM onwards\n📍 Venue: At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri\n\nCordially invite you with family to grace the auspicious occasion and bless the couple.\n\n- Tawade & Nalawade Family";
+        msg = "|| Shree Ganeshay Namah ||\n\n*Engagement Ceremony*\nChi. Sau. Ka. Vaishnavi & Chi. Shubham\n\n📅 Sunday, 01 November 2026, 7:00 PM\n📍 Venue: At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri\n\nCordially invite you with family to grace the occasion and bless the couple.\n\n- Tawade & Nalawade Family";
       }
       document.getElementById("whatsappShareLink").href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(msg);
     }
 
     // ------------------------------------------------------------------------
-    // २. काऊंटडाऊन टायमर (Countdown Timer)
+    // २. काऊंटडाऊन टायमर
     // ------------------------------------------------------------------------
     const ceremonyDate = new Date("November 1, 2026 19:00:00").getTime();
 
@@ -808,26 +753,30 @@
     updateWhatsAppLink();
 
     // ------------------------------------------------------------------------
-    // ३. मंगल शेहनाई संगीत (Web Audio API)
+    // ३. डीफॉल्ट ऑटो-स्टार्ट आणि बटणावर स्टॉप होणारे संगीत (Web Audio)
     // ------------------------------------------------------------------------
     let audioCtx = null;
-    let isPlaying = false;
+    let masterGain = null;
+    let isPlaying = false; // जेव्हा वाजेल तेव्हा true
     let timerId = null;
 
     function initAudio() {
       if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        masterGain = audioCtx.createGain();
+        masterGain.connect(audioCtx.destination);
       }
     }
 
     function playNote(freq, startTime, duration) {
-      if (!audioCtx) return;
+      if (!audioCtx || !isPlaying) return;
       const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      const noteGain = audioCtx.createGain();
 
       osc.type = 'sawtooth';
       osc.frequency.setValueAtTime(freq, startTime);
 
+      // गोड शेहनाई व्हायब्रेटो
       const vibrato = audioCtx.createOscillator();
       const vibratoGain = audioCtx.createGain();
       vibrato.frequency.value = 5.5;
@@ -836,17 +785,18 @@
       vibrato.start(startTime);
       vibrato.stop(startTime + duration);
 
+      // लो-पास फिल्टर
       const filter = audioCtx.createBiquadFilter();
       filter.type = 'lowpass';
       filter.frequency.value = 1100;
 
-      gain.gain.setValueAtTime(0.001, startTime);
-      gain.gain.exponentialRampToValueAtTime(0.08, startTime + 0.1);
-      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+      noteGain.gain.setValueAtTime(0.001, startTime);
+      noteGain.gain.exponentialRampToValueAtTime(0.08, startTime + 0.1);
+      noteGain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
 
       osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(audioCtx.destination);
+      filter.connect(noteGain);
+      noteGain.connect(masterGain);
 
       osc.start(startTime);
       osc.stop(startTime + duration);
@@ -854,6 +804,7 @@
 
     function playMelodyLoop() {
       if (!isPlaying) return;
+      // पारंपारिक भूप रागातील मंगल सूर
       const notes = [
         { f: 293.66, d: 1.0 },
         { f: 329.63, d: 0.8 },
@@ -880,26 +831,69 @@
       }, totalLoopTime);
     }
 
-    function toggleShehnai() {
+    function startAudio() {
       initAudio();
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
+      masterGain.gain.setValueAtTime(1, audioCtx.currentTime);
+      isPlaying = true;
+      playMelodyLoop();
+      updateAudioButtonUI();
+    }
 
-      const btnText = document.getElementById("audioBtnText");
+    function stopAudio() {
+      isPlaying = false;
+      if (timerId) clearTimeout(timerId);
+      if (masterGain && audioCtx) {
+        masterGain.gain.setValueAtTime(0, audioCtx.currentTime); // एका सेकंदात आवाज म्यूट
+      }
+      updateAudioButtonUI();
+    }
+
+    // बटणावर क्लिक केल्यावर चालू/बंद
+    function toggleAudioButton() {
       if (isPlaying) {
-        isPlaying = false;
-        clearTimeout(timerId);
-        btnText.innerText = (currentLang === 'mr') ? "मंगल संगीत" : "Sacred Music";
+        stopAudio();
       } else {
-        isPlaying = true;
-        btnText.innerText = (currentLang === 'mr') ? "संगीत थांबवा" : "Stop Music";
-        playMelodyLoop();
+        startAudio();
       }
     }
 
+    function updateAudioButtonUI() {
+      const btn = document.getElementById("audioToggleBtn");
+      const icon = document.getElementById("audioIcon");
+      const txt = document.getElementById("audioBtnText");
+
+      if (isPlaying) {
+        btn.classList.add("audio-active");
+        icon.className = "fa-solid fa-volume-high";
+        txt.innerText = (currentLang === 'mr') ? "संगीत थांबवा" : "Stop Music";
+      } else {
+        btn.classList.remove("audio-active");
+        icon.className = "fa-solid fa-volume-xmark";
+        txt.innerText = (currentLang === 'mr') ? "मंगल संगीत" : "Play Music";
+      }
+    }
+
+    // पेज उघडताच आपोआप सुरू होण्यासाठी (Auto-start on page load)
+    window.addEventListener('load', () => {
+      startAudio();
+    });
+
+    // फोनच्या ब्राउझर पॉलिसीमुळे गाणे अडकल्यास पहिल्या स्पर्शावर आपोआप चालू होईल
+    ['click', 'touchstart', 'scroll'].forEach(evt => {
+      window.addEventListener(evt, () => {
+        if (!isPlaying && !audioCtx) {
+          startAudio();
+        } else if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+      }, { once: true, passive: true });
+    });
+
     // ------------------------------------------------------------------------
-    // ४. पुष्पवृष्टी ॲनिमेशन (Flower Petals Animation)
+    // ४. पुष्पवृष्टी ॲनिमेशन
     // ------------------------------------------------------------------------
     const canvas = document.getElementById("petalCanvas");
     const ctx = canvas.getContext("2d");
@@ -919,17 +913,17 @@
       }
       reset() {
         this.x = Math.random() * canvas.width;
-        this.y = -20 - Math.random() * 50;
-        this.size = 8 + Math.random() * 12;
-        this.speedY = 1.2 + Math.random() * 1.8;
-        this.speedX = Math.sin(Math.random()) * 1.2;
+        this.y = -20 - Math.random() * 40;
+        this.size = 6 + Math.random() * 10;
+        this.speedY = 1.0 + Math.random() * 1.5;
+        this.speedX = Math.sin(Math.random()) * 0.8;
         this.rotation = Math.random() * 360;
-        this.rotSpeed = (Math.random() - 0.5) * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 1.5;
         const colors = [
-          "rgba(230, 57, 70, 0.75)",
-          "rgba(255, 154, 60, 0.8)",
-          "rgba(244, 162, 97, 0.8)",
-          "rgba(212, 175, 55, 0.75)"
+          "rgba(230, 57, 70, 0.7)",
+          "rgba(255, 154, 60, 0.75)",
+          "rgba(244, 162, 97, 0.75)",
+          "rgba(212, 175, 55, 0.7)"
         ];
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
@@ -953,7 +947,7 @@
       }
     }
 
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < 20; i++) {
       petals.push(new Petal());
     }
 
@@ -974,7 +968,7 @@
       const btnText = document.getElementById("petalBtnText");
       btnText.innerText = petalsActive 
         ? (currentLang === 'mr' ? "पुष्पवृष्टी" : "Petals") 
-        : (currentLang === 'mr' ? "पुष्पवृष्टी सुरू करा" : "Start Petals");
+        : (currentLang === 'mr' ? "पुष्पवृष्टी सुरू" : "Start Petals");
     }
   </script>
 </body>
