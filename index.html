@@ -108,7 +108,7 @@
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
     }
 
-    /* मुख्य पत्रिका कार्ड (मोबाईल रिस्पॉन्सिव्ह) */
+    /* मुख्य पत्रिका कार्ड */
     .card-wrapper {
       width: 100%;
       max-width: 500px;
@@ -145,19 +145,7 @@
     .bottom-left { bottom: 4px; left: 4px; transform: scaleY(-1); }
     .bottom-right { bottom: 4px; right: 4px; transform: scale(-1); }
 
-    /* मोर नक्षी */
-    .peacock-art {
-      position: absolute;
-      width: 56px;
-      height: auto;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.65;
-    }
-    .peacock-top-left { top: 8px; left: 6px; }
-    .peacock-bottom-right { bottom: 8px; right: 6px; }
-
-    /* १. श्री गणेशाचे स्मरण (फक्त पारंपारिक मंगलाचरण) */
+    /* श्री गणेशाचे स्मरण */
     .ganpati-box {
       margin: 6px auto 4px;
       position: relative;
@@ -292,20 +280,12 @@
       font-weight: 500;
     }
 
-    /* काऊंटडाऊन टायमर */
+    /* काऊंटडाऊन टायमर (शीर्षकाशिवाय, टायमर जसाच्या तसा) */
     .countdown-section {
-      margin: 14px auto;
+      margin: 14px auto 16px;
       width: 100%;
       position: relative;
       z-index: 2;
-    }
-    .countdown-title {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #9c6e11;
-      text-transform: uppercase;
-      margin-bottom: 6px;
     }
     .timer-grid {
       display: grid;
@@ -336,7 +316,7 @@
 
     /* कार्यस्थळ */
     .venue-card {
-      margin: 18px auto 14px;
+      margin: 18px auto 12px;
       background: #fff9ea;
       border: 1.5px solid #c59b27;
       border-radius: 10px;
@@ -369,7 +349,35 @@
       line-height: 1.45;
     }
 
-    /* मोठा मॅप व्ह्यू (Open in Maps फ्लोटिंग बटणासह) */
+    /* निमंत्रक (कार्यस्थळाच्या खाली आणि मॅपच्या वर) */
+    .inviter-card {
+      margin: 12px auto 14px;
+      background: #fbf2db;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      padding: 9px 12px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    .inviter-badge {
+      display: inline-block;
+      font-family: 'Rozha One', 'Cinzel', serif;
+      font-size: 13.5px;
+      color: #7a151b;
+      font-weight: 700;
+      border-bottom: 1.5px solid #c59b27;
+      padding-bottom: 1px;
+      margin-bottom: 3px;
+    }
+    .inviter-names {
+      font-size: clamp(15px, 4.2vw, 18px);
+      font-weight: 700;
+      color: #3f2a14;
+      line-height: 1.35;
+    }
+
+    /* मोठा मॅप व्ह्यू (निमंत्रक विभागाच्या खाली) */
     .big-map-box {
       margin: 14px auto 16px;
       width: 100%;
@@ -412,34 +420,6 @@
       height: 250px;
       border: none;
       display: block;
-    }
-
-    /* निमंत्रक */
-    .inviter-card {
-      margin: 14px auto 6px;
-      background: #fbf2db;
-      border: 1px solid #d4af37;
-      border-radius: 8px;
-      padding: 9px 12px;
-      width: 100%;
-      position: relative;
-      z-index: 2;
-    }
-    .inviter-badge {
-      display: inline-block;
-      font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: 13.5px;
-      color: #7a151b;
-      font-weight: 700;
-      border-bottom: 1.5px solid #c59b27;
-      padding-bottom: 1px;
-      margin-bottom: 3px;
-    }
-    .inviter-names {
-      font-size: clamp(15px, 4.2vw, 18px);
-      font-weight: 700;
-      color: #3f2a14;
-      line-height: 1.35;
     }
 
     /* ॲक्शन बटणे */
@@ -523,21 +503,7 @@
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
       </svg>
 
-      <!-- डावीकडील मोर -->
-      <svg class="peacock-art peacock-top-left" viewBox="0 0 120 160">
-        <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972"/>
-        <circle cx="55" cy="30" r="8" fill="#c59b27"/>
-      </svg>
-
-      <!-- उजवीकडील मोर -->
-      <svg class="peacock-art peacock-bottom-right" viewBox="0 0 120 160">
-        <g transform="scale(-1, 1) translate(-120, 0)">
-          <path d="M30,30 C45,15 65,25 60,45 C55,60 40,65 35,80 C30,95 40,120 20,150 C10,120 5,80 15,50 Z" fill="#086972"/>
-          <circle cx="55" cy="30" r="8" fill="#c59b27"/>
-        </g>
-      </svg>
-
-      <!-- १. श्री गणेशाचे स्मरण (फक्त मंगलाचरण मजकूर) -->
+      <!-- १. श्री गणेशाचे स्मरण -->
       <div class="ganpati-box">
         <div class="ganpati-text" data-mr="॥ श्री गणेशाय नमः ॥" data-en="|| Shree Ganeshay Namah ||">
           ॥ श्री गणेशाय नमः ॥
@@ -593,7 +559,7 @@
           श्री. व सौ. प्राची प्रदीप मनोहर नलावडे
         </div>
         <div class="address-info" data-mr="मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी" data-en="At Post Karanjuve, Tal. Sangameshwar, Dist. Ratnagiri">
-          मु. पोस्ट करजुवे, ता. संगमेश्वर, जि. रत्नागिरी
+          मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी
         </div>
         <div class="relation-text" data-mr="यांचा ज्येष्ठ पुत्र" data-en="Eldest Son">
           यांचा ज्येष्ठ पुत्र
@@ -614,12 +580,8 @@
         </p>
       </div>
 
-      <!-- ७. काऊंटडाऊन टायमर -->
+      <!-- ७. काऊंटडाऊन टायमर (मथळ्याशिवाय) -->
       <div class="countdown-section">
-        <div class="countdown-title">
-          <i class="fa-regular fa-clock"></i> 
-          <span data-mr="मंगल घटिका मोजणी" data-en="Auspicious Countdown">मंगल घटिका मोजणी</span>
-        </div>
         <div class="timer-grid">
           <div class="timer-card">
             <span class="timer-num" id="days">--</span>
@@ -652,7 +614,15 @@
         </div>
       </div>
 
-      <!-- मोठा मॅप व्ह्यू (Open in Maps Floating Button) -->
+      <!-- ९. निमंत्रक (कार्यस्थळाच्या खाली आणि मॅपच्या वर) -->
+      <div class="inviter-card">
+        <div class="inviter-badge" data-mr="निमंत्रक" data-en="Cordial Inviter">निमंत्रक</div>
+        <div class="inviter-names" data-mr="समस्त तावडे आणि नलावडे परिवार" data-en="Tawade and Nalawade Family">
+          समस्त तावडे आणि नलावडे परिवार
+        </div>
+      </div>
+
+      <!-- १०. मोठा मॅप व्ह्यू -->
       <div class="big-map-box">
         <a 
           href="https://www.google.com/maps/search/?api=1&query=Zombadi,+Guhagar,+Ratnagiri" 
@@ -670,15 +640,7 @@
         </iframe>
       </div>
 
-      <!-- ९. निमंत्रक -->
-      <div class="inviter-card">
-        <div class="inviter-badge" data-mr="निमंत्रक" data-en="Cordial Inviter">निमंत्रक</div>
-        <div class="inviter-names" data-mr="समस्त तावडे आणि नलावडे परिवार" data-en="Tawade and Nalawade Family">
-          समस्त तावडे आणि नलावडे परिवार
-        </div>
-      </div>
-
-      <!-- १०. ॲक्शन बटणे -->
+      <!-- ११. ॲक्शन बटणे -->
       <div class="action-button-group">
         <a 
           href="https://www.google.com/maps/search/?api=1&query=%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
@@ -689,7 +651,6 @@
           <span data-mr="गुगल मॅप मार्ग" data-en="Google Maps">गुगल मॅप मार्ग</span>
         </a>
 
-        <!-- 6:00 PM IST नुसार 12:30 UTC ची कॅलेंडर लिंक -->
         <a 
           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD+-+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%B5+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80&dates=20261101T123000Z/20261101T163000Z&details=%E0%A4%9A%E0%A4%BF.+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%86%E0%A4%A3%E0%A4%BF+%E0%A4%9A%E0%A4%BF.+%E0%A4%B8%E0%A5%8c.+%E0%A4%95%E0%A4%BE.+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80+%E0%A4%AF%E0%A4%BE%E0%A4%82%E0%A4%9A%E0%A4%BE+%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD&location=%E0%A4%AE%E0%A5%81.+%E0%A4%AA%E0%A5%8B.+%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE.+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%9C%E0%A4%BF.+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
           target="_blank" 
