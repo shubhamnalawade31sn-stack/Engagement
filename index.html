@@ -46,7 +46,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 8px 8px 30px;
+      padding: 8px 8px 35px;
       position: relative;
     }
 
@@ -64,7 +64,7 @@
     /* वरची मोबाईल कंट्रोल पट्टी */
     .top-control-bar {
       width: 100%;
-      max-width: 520px;
+      max-width: 500px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -101,7 +101,6 @@
       border-color: #d4af37;
     }
 
-    /* संगीत सुरू असताना इफेक्ट */
     .audio-active {
       background: #c59b27;
       color: #ffffff;
@@ -122,7 +121,6 @@
       margin: 0 auto;
     }
 
-    /* अंतर्गत चौकट */
     .card-inner {
       border: 1.5px solid #b8860b;
       border-radius: 12px;
@@ -136,8 +134,8 @@
     /* कोपऱ्यातील डिझाईन */
     .corner-decor {
       position: absolute;
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       pointer-events: none;
       opacity: 0.8;
       z-index: 1;
@@ -147,10 +145,10 @@
     .bottom-left { bottom: 4px; left: 4px; transform: scaleY(-1); }
     .bottom-right { bottom: 4px; right: 4px; transform: scale(-1); }
 
-    /* मोर नक्षी (Non-overlapping) */
+    /* मोर नक्षी */
     .peacock-art {
       position: absolute;
-      width: 58px;
+      width: 56px;
       height: auto;
       pointer-events: none;
       z-index: 1;
@@ -159,26 +157,27 @@
     .peacock-top-left { top: 8px; left: 6px; }
     .peacock-bottom-right { bottom: 8px; right: 6px; }
 
-    /* श्री गणेशाय नमः */
+    /* श्री गणेशाय नमः व नवीन सुबक बाप्पांची मूर्ती */
     .ganpati-box {
       margin-bottom: 4px;
       position: relative;
       z-index: 2;
     }
-    .ganpati-img {
-      width: 65px;
-      height: 65px;
+    .ganpati-img-wrap {
+      width: 82px;
+      height: 82px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
+      filter: drop-shadow(0 3px 6px rgba(184, 134, 11, 0.4));
     }
     .ganpati-text {
       font-family: 'Rozha One', 'Cinzel', serif;
       font-size: clamp(17px, 5vw, 21px);
       color: var(--maroon);
       letter-spacing: 1.5px;
-      margin-top: 2px;
+      margin-top: 3px;
       font-weight: 700;
     }
 
@@ -205,7 +204,7 @@
       background-size: contain;
     }
 
-    /* वधू व वर विभाग */
+    /* वधू व वर तपशील */
     .couple-profile {
       margin: 10px 0;
       padding: 4px 6px;
@@ -219,7 +218,6 @@
       font-weight: 800;
       margin-bottom: 3px;
       line-height: 1.25;
-      word-break: break-word;
     }
     .salutation {
       font-size: clamp(16px, 4.5vw, 20px);
@@ -350,7 +348,7 @@
 
     /* कार्यस्थळ */
     .venue-card {
-      margin: 18px auto 12px;
+      margin: 18px auto 14px;
       background: #fff9ea;
       border: 1.5px solid #c59b27;
       border-radius: 10px;
@@ -383,6 +381,57 @@
       line-height: 1.45;
     }
 
+    /* =======================================================
+       नवीन मोठा मॅप व्ह्यू (मोबाईलसाठी अनुकूल आणि सुस्पष्ट)
+       ======================================================= */
+    .big-map-box {
+      margin: 14px auto 16px;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #c59b27;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      position: relative;
+      background: #e8ecf1;
+    }
+
+    /* स्क्रीनशॉटप्रमाणे "Open in Maps" फ्लोटिंग बटण */
+    .map-floating-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: #ffffff;
+      color: #1a73e8;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .map-floating-btn:hover {
+      background: #f8fafd;
+      color: #0b57d0;
+      transform: translateY(-1px);
+    }
+    .map-floating-btn i {
+      font-size: 12px;
+    }
+
+    .big-map-iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      display: block;
+    }
+
     /* निमंत्रक */
     .inviter-card {
       margin: 14px auto 6px;
@@ -411,7 +460,7 @@
       line-height: 1.35;
     }
 
-    /* कृती बटणे */
+    /* ॲक्शन बटणे */
     .action-button-group {
       display: flex;
       flex-direction: column;
@@ -459,7 +508,7 @@
     <button class="ctrl-btn lang-btn" id="langToggleBtn" onclick="toggleLanguage()">
       <i class="fa-solid fa-language"></i> <span id="langBtnText">English</span>
     </button>
-    <!-- डीफॉल्ट सुरू आणि बटणावर थांबणारे ऑडिओ बटण -->
+    <!-- डीफॉल्ट ऑटो-स्टार्ट आणि बटणावर स्टॉप होणारे ऑडिओ बटण -->
     <button class="ctrl-btn audio-active" id="audioToggleBtn" onclick="toggleAudioButton()">
       <i class="fa-solid fa-volume-high" id="audioIcon"></i> <span id="audioBtnText">संगीत थांबवा</span>
     </button>
@@ -475,7 +524,7 @@
   <div class="card-wrapper">
     <div class="card-inner">
 
-      <!-- चारही कोपऱ्यांतील नक्षी -->
+      <!-- चारही कोपऱ्यांतील बारीक नक्षी -->
       <svg class="corner-decor top-left" viewBox="0 0 100 100">
         <path d="M 0,0 L 50,0 C 30,10 10,30 0,50 Z" fill="#c59b27" />
         <path d="M 10,10 L 40,10 C 25,20 20,25 10,40 Z" fill="#7a151b" />
@@ -507,16 +556,43 @@
         </g>
       </svg>
 
-      <!-- १. श्री गणेशाचे स्मरण -->
+      <!-- १. श्री गणेशाचे स्मरण (सुबक, सुस्पष्ट व पारंपारिक सोन्याची नक्षी) -->
       <div class="ganpati-box">
-        <div class="ganpati-img">
-          <svg viewBox="0 0 100 100" width="65" height="65">
-            <path d="M50,15 C55,15 62,18 64,25 C66,32 60,38 52,38 C45,38 40,32 40,25 C40,18 45,15 50,15 Z" fill="#c59b27" />
-            <path d="M52,38 C56,42 64,48 64,60 C64,72 50,78 44,78 C38,78 35,74 38,70 C42,66 48,68 52,62 C55,58 54,46 50,42" fill="none" stroke="#7a151b" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M36,28 C26,26 24,38 28,48 C32,54 38,50 38,45" fill="none" stroke="#c59b27" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M64,28 C74,26 76,38 72,48 C68,54 62,50 62,45" fill="none" stroke="#c59b27" stroke-width="3.5" stroke-linecap="round"/>
-            <circle cx="50" cy="24" r="3" fill="#7a151b"/>
-            <circle cx="35" cy="65" r="3.5" fill="#c59b27"/>
+        <div class="ganpati-img-wrap">
+          <svg viewBox="0 0 120 120" width="80" height="80">
+            <defs>
+              <linearGradient id="goldGanpati" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#bf953f" />
+                <stop offset="25%" stop-color="#fcf6ba" />
+                <stop offset="50%" stop-color="#b38728" />
+                <stop offset="75%" stop-color="#fbf5b7" />
+                <stop offset="100%" stop-color="#aa771c" />
+              </linearGradient>
+            </defs>
+            <!-- मुकुट (Crown) -->
+            <path d="M50,14 L70,14 L65,26 L55,26 Z" fill="url(#goldGanpati)" stroke="#7a151b" stroke-width="1.2"/>
+            <polygon points="60,6 54,14 66,14" fill="url(#goldGanpati)" stroke="#7a151b" stroke-width="1"/>
+            <circle cx="60" cy="8" r="2.5" fill="#7a151b"/>
+
+            <!-- कान आणि डोके (Ears & Face Outline) -->
+            <!-- डावा कान -->
+            <path d="M48,26 C35,22 24,32 26,48 C28,60 38,64 45,62" fill="none" stroke="url(#goldGanpati)" stroke-width="4.5" stroke-linecap="round"/>
+            <!-- उजवा कान -->
+            <path d="M72,26 C85,22 96,32 94,48 C92,60 82,64 75,62" fill="none" stroke="url(#goldGanpati)" stroke-width="4.5" stroke-linecap="round"/>
+
+            <!-- भव्य कपाळ व सोंड (Trunk & Modak) -->
+            <path d="M60,26 C53,30 49,42 50,56 C51,68 56,76 66,80 C74,83 78,80 77,74 C76,68 68,69 66,74" fill="none" stroke="url(#goldGanpati)" stroke-width="5" stroke-linecap="round"/>
+
+            <!-- कुंकुमतिळक / त्रिशूळ (Auspicious Red Tilak) -->
+            <path d="M58,28 L62,28 M60,24 L60,34" stroke="#7a151b" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="60" cy="37" r="2.2" fill="#7a151b"/>
+
+            <!-- एकदंत (Tusk) -->
+            <path d="M68,54 L75,54" stroke="url(#goldGanpati)" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- मोदक (Modak) -->
+            <ellipse cx="68" cy="74" rx="4" ry="4.5" fill="#7a151b"/>
+            <circle cx="68" cy="74" r="2.5" fill="url(#goldGanpati)"/>
           </svg>
         </div>
         <div class="ganpati-text" data-mr="॥ श्री गणेशाय नमः ॥" data-en="|| Shree Ganeshay Namah ||">
@@ -620,7 +696,7 @@
         </div>
       </div>
 
-      <!-- ८. कार्यस्थळ -->
+      <!-- ८. कार्यस्थळ (Venue Card) -->
       <div class="venue-card">
         <div class="venue-badge">
           <i class="fa-solid fa-location-dot"></i> 
@@ -630,6 +706,27 @@
           मु. पो. झोंबडी, तावडेवाडी,<br />
           ता. गुहागर, जि. रत्नागिरी
         </div>
+      </div>
+
+      <!-- नवीन मोठा मॅप व्ह्यू (Big Map View with "Open in Maps" Button like Attached Image) -->
+      <div class="big-map-box">
+        <!-- फ्लोटिंग 'Open in Maps' बटण -->
+        <a 
+          href="https://www.google.com/maps/search/?api=1&query=Zombadi,+Guhagar,+Ratnagiri" 
+          target="_blank" 
+          class="map-floating-btn"
+          id="floatingMapBtn"
+        >
+          <span data-mr="मॅप उघडा" data-en="Open in Maps">मॅप उघडा</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        
+        <!-- गुगल मॅप्स थेट दृश्य -->
+        <iframe 
+          class="big-map-iframe"
+          src="https://maps.google.com/maps?q=Zombadi%2C%20Guhagar%2C%20Ratnagiri&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
       </div>
 
       <!-- ९. निमंत्रक -->
@@ -753,11 +850,11 @@
     updateWhatsAppLink();
 
     // ------------------------------------------------------------------------
-    // ३. डीफॉल्ट ऑटो-स्टार्ट आणि बटणावर स्टॉप होणारे संगीत (Web Audio)
+    // ३. डीफॉल्ट ऑटो-स्टार्ट आणि बटणावर स्टॉप होणारे संगीत (Web Audio API)
     // ------------------------------------------------------------------------
     let audioCtx = null;
     let masterGain = null;
-    let isPlaying = false; // जेव्हा वाजेल तेव्हा true
+    let isPlaying = false;
     let timerId = null;
 
     function initAudio() {
@@ -776,7 +873,6 @@
       osc.type = 'sawtooth';
       osc.frequency.setValueAtTime(freq, startTime);
 
-      // गोड शेहनाई व्हायब्रेटो
       const vibrato = audioCtx.createOscillator();
       const vibratoGain = audioCtx.createGain();
       vibrato.frequency.value = 5.5;
@@ -785,7 +881,6 @@
       vibrato.start(startTime);
       vibrato.stop(startTime + duration);
 
-      // लो-पास फिल्टर
       const filter = audioCtx.createBiquadFilter();
       filter.type = 'lowpass';
       filter.frequency.value = 1100;
@@ -804,7 +899,6 @@
 
     function playMelodyLoop() {
       if (!isPlaying) return;
-      // पारंपारिक भूप रागातील मंगल सूर
       const notes = [
         { f: 293.66, d: 1.0 },
         { f: 329.63, d: 0.8 },
@@ -846,12 +940,11 @@
       isPlaying = false;
       if (timerId) clearTimeout(timerId);
       if (masterGain && audioCtx) {
-        masterGain.gain.setValueAtTime(0, audioCtx.currentTime); // एका सेकंदात आवाज म्यूट
+        masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
       }
       updateAudioButtonUI();
     }
 
-    // बटणावर क्लिक केल्यावर चालू/बंद
     function toggleAudioButton() {
       if (isPlaying) {
         stopAudio();
@@ -876,12 +969,10 @@
       }
     }
 
-    // पेज उघडताच आपोआप सुरू होण्यासाठी (Auto-start on page load)
     window.addEventListener('load', () => {
       startAudio();
     });
 
-    // फोनच्या ब्राउझर पॉलिसीमुळे गाणे अडकल्यास पहिल्या स्पर्शावर आपोआप चालू होईल
     ['click', 'touchstart', 'scroll'].forEach(evt => {
       window.addEventListener(evt, () => {
         if (!isPlaying && !audioCtx) {
