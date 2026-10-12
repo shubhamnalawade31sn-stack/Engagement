@@ -157,27 +157,17 @@
     .peacock-top-left { top: 8px; left: 6px; }
     .peacock-bottom-right { bottom: 8px; right: 6px; }
 
-    /* श्री गणेशाय नमः व नवीन जोडलेल्या प्रतिमेप्रमाणे गणपती (Attached Image Replica) */
+    /* १. श्री गणेशाचे स्मरण (फक्त पारंपारिक मंगलाचरण) */
     .ganpati-box {
-      margin-bottom: 6px;
+      margin: 6px auto 4px;
       position: relative;
       z-index: 2;
     }
-    .ganpati-img-wrap {
-      width: 90px;
-      height: 105px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      filter: drop-shadow(0 2px 5px rgba(184, 134, 11, 0.35));
-    }
     .ganpati-text {
       font-family: 'Rozha One', 'Cinzel', serif;
-      font-size: clamp(17px, 5vw, 21px);
+      font-size: clamp(18px, 5.2vw, 22px);
       color: var(--maroon);
-      letter-spacing: 1.5px;
-      margin-top: 2px;
+      letter-spacing: 2px;
       font-weight: 700;
     }
 
@@ -239,7 +229,7 @@
       line-height: 1.4;
     }
 
-    /* 'यांची द्वितीय कन्या' व 'यांचा ज्येष्ठ पुत्र' - साधा व पारंपारिक फॉन्ट (कोणताही हायलाईट बॅज नाही) */
+    /* साधा पारंपारिक फॉन्ट - हायलाईट नाही */
     .relation-text {
       font-size: clamp(14px, 3.9vw, 16.5px);
       color: #4a3823;
@@ -276,7 +266,7 @@
       box-shadow: 0 3px 8px rgba(197, 155, 39, 0.25);
     }
 
-    /* निमंत्रण मजकूर चौकट */
+    /* निमंत्रण मजकूर चौकट (वेळ: संध्याकाळी ६:०० वाजता) */
     .invitation-quote-box {
       margin: 15px auto 14px;
       background: rgba(255, 255, 255, 0.85);
@@ -379,9 +369,7 @@
       line-height: 1.45;
     }
 
-    /* =======================================================
-       मोठा मॅप व्ह्यू (Open in Maps फ्लोटिंग बटणासह)
-       ======================================================= */
+    /* मोठा मॅप व्ह्यू (Open in Maps फ्लोटिंग बटणासह) */
     .big-map-box {
       margin: 14px auto 16px;
       width: 100%;
@@ -549,48 +537,8 @@
         </g>
       </svg>
 
-      <!-- १. श्री गणेशाचे स्मरण (जोडलेल्या फोटोप्रमाणे Amboz Art स्टाईल गणपती) -->
+      <!-- १. श्री गणेशाचे स्मरण (फक्त मंगलाचरण मजकूर) -->
       <div class="ganpati-box">
-        <div class="ganpati-img-wrap">
-          <svg viewBox="0 0 120 140" width="85" height="105">
-            <defs>
-              <linearGradient id="ganpatiAmbozGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#b8860b" />
-                <stop offset="25%" stop-color="#fdf4ba" />
-                <stop offset="50%" stop-color="#c59b27" />
-                <stop offset="75%" stop-color="#fff4b8" />
-                <stop offset="100%" stop-color="#916c16" />
-              </linearGradient>
-            </defs>
-            <g fill="none" stroke="url(#ganpatiAmbozGold)" stroke-linecap="round" stroke-linejoin="round">
-              <!-- शीर्षावरील कळश / त्रिशूळ कळस (Top Pagoda / Tilak Spire) -->
-              <path d="M60,6 L60,42" stroke-width="3" />
-              <path d="M60,6 L56,12 M60,6 L64,12" stroke-width="2.5" />
-              <!-- 3 आडवे बार (Horizontal Bars) -->
-              <path d="M54,16 L66,16" stroke-width="3.2" />
-              <path d="M50,23 L70,23" stroke-width="3.2" />
-              <path d="M45,30 L75,30" stroke-width="3.2" />
-              <!-- कपाळावरील मधोमध ड्रॉप (Forehead Drop Loop) -->
-              <circle cx="60" cy="37" r="2.5" fill="url(#ganpatiAmbozGold)" stroke-width="1.5" />
-
-              <!-- कान (Winged Outstretched Ears) -->
-              <!-- डावा कान (बाहेरून आत) -->
-              <path d="M48,34 C36,33 22,38 21,43 C20,49 26,58 31,52 C35,48 40,40 50,42" stroke-width="3.8" />
-              <!-- उजवा कान (बाहेरून आत) -->
-              <path d="M72,34 C84,33 98,38 99,43 C100,49 94,58 89,52 C85,48 80,40 70,42" stroke-width="3.8" />
-
-              <!-- सोंड (Graceful Flowing Ribbon Trunk) -->
-              <!-- बाह्य वळण (Outer Silhouette Line) -->
-              <path d="M69,45 C75,54 81,64 77,78 C73,92 65,103 54,115 C49,120 54,128 62,123 C68,119 66,112 61,113" stroke-width="4.2" />
-              <!-- अंतर्गत वळण (Inner Parallel Ribbon Line) -->
-              <path d="M51,45 C56,54 63,64 63,77 C63,90 56,100 48,111" stroke-width="3.4" />
-
-              <!-- सोंडेच्या तळाशी त्रिशूळ / कळश चिन्ह (Bottom Finial) -->
-              <path d="M58,127 L58,135 M54,131 L62,131" stroke-width="2.6" />
-              <circle cx="58" cy="135" r="1.5" fill="url(#ganpatiAmbozGold)" stroke="none" />
-            </g>
-          </svg>
-        </div>
         <div class="ganpati-text" data-mr="॥ श्री गणेशाय नमः ॥" data-en="|| Shree Ganeshay Namah ||">
           ॥ श्री गणेशाय नमः ॥
         </div>
@@ -616,7 +564,6 @@
         <div class="address-info" data-mr="मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी" data-en="At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri">
           मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी
         </div>
-        <!-- साधा पारंपारिक फॉन्ट - हायलाईट काढला आहे -->
         <div class="relation-text" data-mr="यांची द्वितीय कन्या" data-en="Second Daughter">
           यांची द्वितीय कन्या
         </div>
@@ -648,18 +595,17 @@
         <div class="address-info" data-mr="मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी" data-en="At Post Karanjuve, Tal. Sangameshwar, Dist. Ratnagiri">
           मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी
         </div>
-        <!-- साधा पारंपारिक फॉन्ट - हायलाईट काढला आहे -->
         <div class="relation-text" data-mr="यांचा ज्येष्ठ पुत्र" data-en="Eldest Son">
           यांचा ज्येष्ठ पुत्र
         </div>
       </div>
 
-      <!-- ६. निमंत्रण व वेळ -->
+      <!-- ६. निमंत्रण व वेळ (संध्याकाळी ६:०० वाजता) -->
       <div class="invitation-quote-box">
         <div class="event-time-highlight">
           <i class="fa-regular fa-calendar-check" style="color: #c59b27; margin-right: 5px;"></i>
-          <span data-mr="रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ७:०० वाजता" data-en="Sunday, 01 November 2026, at 7:00 PM">
-            रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ७:०० वाजता
+          <span data-mr="रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ६:०० वाजता" data-en="Sunday, 01 November 2026, at 6:00 PM">
+            रविवार, दिनांक ०१ नोव्हेंबर २०२६, संध्याकाळी ६:०० वाजता
           </span>
         </div>
         <p class="cordial-text" data-mr="साखरपुडा समारंभ आयोजित केला आहे.<br />तरी आपण सहकुटुंब उपस्थित राहून वधू-वरांना शुभाशीर्वाद द्यावेत, ही नम्र विनंती." data-en="Cordially invite you with family to grace the auspicious Engagement Ceremony and bless the couple.">
@@ -706,7 +652,7 @@
         </div>
       </div>
 
-      <!-- नवीन मोठा मॅप व्ह्यू (Big Map View with "Open in Maps" Floating Button) -->
+      <!-- मोठा मॅप व्ह्यू (Open in Maps Floating Button) -->
       <div class="big-map-box">
         <a 
           href="https://www.google.com/maps/search/?api=1&query=Zombadi,+Guhagar,+Ratnagiri" 
@@ -743,8 +689,9 @@
           <span data-mr="गुगल मॅप मार्ग" data-en="Google Maps">गुगल मॅप मार्ग</span>
         </a>
 
+        <!-- 6:00 PM IST नुसार 12:30 UTC ची कॅलेंडर लिंक -->
         <a 
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD+-+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%B5+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80&dates=20261101T133000Z/20261101T173000Z&details=%E0%A4%9A%E0%A4%BF.+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%86%E0%A4%A3%E0%A4%BF+%E0%A4%9A%E0%A4%BF.+%E0%A4%B8%E0%A5%8c.+%E0%A4%95%E0%A4%BE.+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80+%E0%A4%AF%E0%A4%BE%E0%A4%82%E0%A4%9A%E0%A4%BE+%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD&location=%E0%A4%AE%E0%A5%81.+%E0%A4%AA%E0%A5%8B.+%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE.+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%9C%E0%A4%BF.+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD+-+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%B5+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80&dates=20261101T123000Z/20261101T163000Z&details=%E0%A4%9A%E0%A4%BF.+%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A4%AE+%E0%A4%86%E0%A4%A3%E0%A4%BF+%E0%A4%9A%E0%A4%BF.+%E0%A4%B8%E0%A5%8c.+%E0%A4%95%E0%A4%BE.+%E0%A4%B5%E0%A5%88%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%B5%E0%A5%80+%E0%A4%AF%E0%A4%BE%E0%A4%82%E0%A4%9A%E0%A4%BE+%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE+%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%82%E0%A4%AD&location=%E0%A4%AE%E0%A5%81.+%E0%A4%AA%E0%A5%8B.+%E0%A4%9D%E0%A5%8B%E0%A4%82%E0%A4%AC%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE%E0%A4%B5%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80,+%E0%A4%A4%E0%A4%BE.+%E0%A4%97%E0%A5%81%E0%A4%B9%E0%A4%BE%E0%A4%97%E0%A4%B0,+%E0%A4%9C%E0%A4%BF.+%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80" 
           target="_blank" 
           class="action-btn btn-cal"
         >
@@ -802,13 +749,13 @@
       if (currentLang === 'mr') {
         msg = "॥ श्री गणेशाय नमः ॥\n\n*साखरपुडा समारंभ*\nचि. सौ. का. वैष्णवी आणि चि. शुभम\n\n📅 रविवार, ०१ नोव्हेंबर २०२६, सायं. ६:०० वाजता\n📍 कार्यस्थळ: मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी\n\nतरी आपण सहकुटुंब उपस्थित राहून वधू-वरांना शुभाशीर्वाद द्यावेत, ही नम्र विनंती.\n\n- समस्त तावडे आणि नलावडे परिवार";
       } else {
-        msg = "|| Shree Ganeshay Namah ||\n\n*Engagement Ceremony*\nChi. Sau. Ka. Vaishnavi & Chi. Shubham\n\n📅 Sunday, 01 November 2026, 7:00 PM\n📍 Venue: At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri\n\nCordially invite you with family to grace the occasion and bless the couple.\n\n- Tawade & Nalawade Family";
+        msg = "|| Shree Ganeshay Namah ||\n\n*Engagement Ceremony*\nChi. Sau. Ka. Vaishnavi & Chi. Shubham\n\n📅 Sunday, 01 November 2026, 6:00 PM\n📍 Venue: At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri\n\nCordially invite you with family to grace the occasion and bless the couple.\n\n- Tawade & Nalawade Family";
       }
       document.getElementById("whatsappShareLink").href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(msg);
     }
 
     // ------------------------------------------------------------------------
-    // २. काऊंटडाऊन टायमर
+    // २. काऊंटडाऊन टायमर (वेळ: संध्याकाळी ६:०० वाजता - 18:00:00)
     // ------------------------------------------------------------------------
     const ceremonyDate = new Date("November 1, 2026 18:00:00").getTime();
 
