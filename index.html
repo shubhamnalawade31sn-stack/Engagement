@@ -8,7 +8,7 @@
   <!-- गुगल फॉन्ट्स -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Mukta:wght@300;400;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Mukta:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
   <!-- फॉन्ट ऑसम आयकॉन्स -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -152,32 +152,32 @@
       height: auto;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.7;
+      opacity: 0.65;
     }
     .peacock-top-left { top: 8px; left: 6px; }
     .peacock-bottom-right { bottom: 8px; right: 6px; }
 
-    /* श्री गणेशाय नमः व नवीन सुबक बाप्पांची मूर्ती */
+    /* श्री गणेशाय नमः व नवीन जोडलेल्या प्रतिमेप्रमाणे गणपती (Attached Image Replica) */
     .ganpati-box {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       position: relative;
       z-index: 2;
     }
     .ganpati-img-wrap {
-      width: 82px;
-      height: 82px;
+      width: 90px;
+      height: 105px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 3px 6px rgba(184, 134, 11, 0.4));
+      filter: drop-shadow(0 2px 5px rgba(184, 134, 11, 0.35));
     }
     .ganpati-text {
       font-family: 'Rozha One', 'Cinzel', serif;
       font-size: clamp(17px, 5vw, 21px);
       color: var(--maroon);
       letter-spacing: 1.5px;
-      margin-top: 3px;
+      margin-top: 2px;
       font-weight: 700;
     }
 
@@ -238,16 +238,14 @@
       font-weight: 500;
       line-height: 1.4;
     }
-    .relation-badge {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 2px 14px;
-      background: rgba(197, 155, 39, 0.12);
-      border: 1px solid rgba(197, 155, 39, 0.4);
-      border-radius: 18px;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--maroon);
+
+    /* 'यांची द्वितीय कन्या' व 'यांचा ज्येष्ठ पुत्र' - साधा व पारंपारिक फॉन्ट (कोणताही हायलाईट बॅज नाही) */
+    .relation-text {
+      font-size: clamp(14px, 3.9vw, 16.5px);
+      color: #4a3823;
+      margin-top: 3px;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     /* अंगठ्यांचे चिन्ह */
@@ -382,7 +380,7 @@
     }
 
     /* =======================================================
-       नवीन मोठा मॅप व्ह्यू (मोबाईलसाठी अनुकूल आणि सुस्पष्ट)
+       मोठा मॅप व्ह्यू (Open in Maps फ्लोटिंग बटणासह)
        ======================================================= */
     .big-map-box {
       margin: 14px auto 16px;
@@ -395,7 +393,6 @@
       background: #e8ecf1;
     }
 
-    /* स्क्रीनशॉटप्रमाणे "Open in Maps" फ्लोटिंग बटण */
     .map-floating-btn {
       position: absolute;
       top: 10px;
@@ -420,9 +417,6 @@
       background: #f8fafd;
       color: #0b57d0;
       transform: translateY(-1px);
-    }
-    .map-floating-btn i {
-      font-size: 12px;
     }
 
     .big-map-iframe {
@@ -508,7 +502,6 @@
     <button class="ctrl-btn lang-btn" id="langToggleBtn" onclick="toggleLanguage()">
       <i class="fa-solid fa-language"></i> <span id="langBtnText">English</span>
     </button>
-    <!-- डीफॉल्ट ऑटो-स्टार्ट आणि बटणावर स्टॉप होणारे ऑडिओ बटण -->
     <button class="ctrl-btn audio-active" id="audioToggleBtn" onclick="toggleAudioButton()">
       <i class="fa-solid fa-volume-high" id="audioIcon"></i> <span id="audioBtnText">संगीत थांबवा</span>
     </button>
@@ -556,43 +549,46 @@
         </g>
       </svg>
 
-      <!-- १. श्री गणेशाचे स्मरण (सुबक, सुस्पष्ट व पारंपारिक सोन्याची नक्षी) -->
+      <!-- १. श्री गणेशाचे स्मरण (जोडलेल्या फोटोप्रमाणे Amboz Art स्टाईल गणपती) -->
       <div class="ganpati-box">
         <div class="ganpati-img-wrap">
-          <svg viewBox="0 0 120 120" width="80" height="80">
+          <svg viewBox="0 0 120 140" width="85" height="105">
             <defs>
-              <linearGradient id="goldGanpati" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#bf953f" />
-                <stop offset="25%" stop-color="#fcf6ba" />
-                <stop offset="50%" stop-color="#b38728" />
-                <stop offset="75%" stop-color="#fbf5b7" />
-                <stop offset="100%" stop-color="#aa771c" />
+              <linearGradient id="ganpatiAmbozGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#b8860b" />
+                <stop offset="25%" stop-color="#fdf4ba" />
+                <stop offset="50%" stop-color="#c59b27" />
+                <stop offset="75%" stop-color="#fff4b8" />
+                <stop offset="100%" stop-color="#916c16" />
               </linearGradient>
             </defs>
-            <!-- मुकुट (Crown) -->
-            <path d="M50,14 L70,14 L65,26 L55,26 Z" fill="url(#goldGanpati)" stroke="#7a151b" stroke-width="1.2"/>
-            <polygon points="60,6 54,14 66,14" fill="url(#goldGanpati)" stroke="#7a151b" stroke-width="1"/>
-            <circle cx="60" cy="8" r="2.5" fill="#7a151b"/>
+            <g fill="none" stroke="url(#ganpatiAmbozGold)" stroke-linecap="round" stroke-linejoin="round">
+              <!-- शीर्षावरील कळश / त्रिशूळ कळस (Top Pagoda / Tilak Spire) -->
+              <path d="M60,6 L60,42" stroke-width="3" />
+              <path d="M60,6 L56,12 M60,6 L64,12" stroke-width="2.5" />
+              <!-- 3 आडवे बार (Horizontal Bars) -->
+              <path d="M54,16 L66,16" stroke-width="3.2" />
+              <path d="M50,23 L70,23" stroke-width="3.2" />
+              <path d="M45,30 L75,30" stroke-width="3.2" />
+              <!-- कपाळावरील मधोमध ड्रॉप (Forehead Drop Loop) -->
+              <circle cx="60" cy="37" r="2.5" fill="url(#ganpatiAmbozGold)" stroke-width="1.5" />
 
-            <!-- कान आणि डोके (Ears & Face Outline) -->
-            <!-- डावा कान -->
-            <path d="M48,26 C35,22 24,32 26,48 C28,60 38,64 45,62" fill="none" stroke="url(#goldGanpati)" stroke-width="4.5" stroke-linecap="round"/>
-            <!-- उजवा कान -->
-            <path d="M72,26 C85,22 96,32 94,48 C92,60 82,64 75,62" fill="none" stroke="url(#goldGanpati)" stroke-width="4.5" stroke-linecap="round"/>
+              <!-- कान (Winged Outstretched Ears) -->
+              <!-- डावा कान (बाहेरून आत) -->
+              <path d="M48,34 C36,33 22,38 21,43 C20,49 26,58 31,52 C35,48 40,40 50,42" stroke-width="3.8" />
+              <!-- उजवा कान (बाहेरून आत) -->
+              <path d="M72,34 C84,33 98,38 99,43 C100,49 94,58 89,52 C85,48 80,40 70,42" stroke-width="3.8" />
 
-            <!-- भव्य कपाळ व सोंड (Trunk & Modak) -->
-            <path d="M60,26 C53,30 49,42 50,56 C51,68 56,76 66,80 C74,83 78,80 77,74 C76,68 68,69 66,74" fill="none" stroke="url(#goldGanpati)" stroke-width="5" stroke-linecap="round"/>
+              <!-- सोंड (Graceful Flowing Ribbon Trunk) -->
+              <!-- बाह्य वळण (Outer Silhouette Line) -->
+              <path d="M69,45 C75,54 81,64 77,78 C73,92 65,103 54,115 C49,120 54,128 62,123 C68,119 66,112 61,113" stroke-width="4.2" />
+              <!-- अंतर्गत वळण (Inner Parallel Ribbon Line) -->
+              <path d="M51,45 C56,54 63,64 63,77 C63,90 56,100 48,111" stroke-width="3.4" />
 
-            <!-- कुंकुमतिळक / त्रिशूळ (Auspicious Red Tilak) -->
-            <path d="M58,28 L62,28 M60,24 L60,34" stroke="#7a151b" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="60" cy="37" r="2.2" fill="#7a151b"/>
-
-            <!-- एकदंत (Tusk) -->
-            <path d="M68,54 L75,54" stroke="url(#goldGanpati)" stroke-width="3" stroke-linecap="round"/>
-
-            <!-- मोदक (Modak) -->
-            <ellipse cx="68" cy="74" rx="4" ry="4.5" fill="#7a151b"/>
-            <circle cx="68" cy="74" r="2.5" fill="url(#goldGanpati)"/>
+              <!-- सोंडेच्या तळाशी त्रिशूळ / कळश चिन्ह (Bottom Finial) -->
+              <path d="M58,127 L58,135 M54,131 L62,131" stroke-width="2.6" />
+              <circle cx="58" cy="135" r="1.5" fill="url(#ganpatiAmbozGold)" stroke="none" />
+            </g>
           </svg>
         </div>
         <div class="ganpati-text" data-mr="॥ श्री गणेशाय नमः ॥" data-en="|| Shree Ganeshay Namah ||">
@@ -608,7 +604,7 @@
         <div class="arch-divider"></div>
       </div>
 
-      <!-- ३. वधूची माहिती -->
+      <!-- ३. वधूची माहिती (Bride Details) -->
       <div class="couple-profile">
         <h2 class="person-name">
           <span class="salutation" data-mr="चि. सौ. का. " data-en="Chi. Sau. Ka. ">चि. सौ. का. </span>
@@ -620,7 +616,8 @@
         <div class="address-info" data-mr="मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी" data-en="At Post Zombadi, Tawadewadi, Tal. Guhagar, Dist. Ratnagiri">
           मु. पो. झोंबडी, तावडेवाडी, ता. गुहागर, जि. रत्नागिरी
         </div>
-        <div class="relation-badge" data-mr="यांची द्वितीय कन्या" data-en="Second Daughter">
+        <!-- साधा पारंपारिक फॉन्ट - हायलाईट काढला आहे -->
+        <div class="relation-text" data-mr="यांची द्वितीय कन्या" data-en="Second Daughter">
           यांची द्वितीय कन्या
         </div>
       </div>
@@ -639,7 +636,7 @@
         <div class="motif-line"></div>
       </div>
 
-      <!-- ५. वराची माहिती -->
+      <!-- ५. वराची माहिती (Groom Details) -->
       <div class="couple-profile">
         <h2 class="person-name">
           <span class="salutation" data-mr="चि. " data-en="Chi. ">चि. </span>
@@ -651,7 +648,8 @@
         <div class="address-info" data-mr="मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी" data-en="At Post Karanjuve, Tal. Sangameshwar, Dist. Ratnagiri">
           मु. पोस्ट करंजुवे, ता. संगमेश्वर, जि. रत्नागिरी
         </div>
-        <div class="relation-badge" data-mr="यांचा ज्येष्ठ पुत्र" data-en="Eldest Son">
+        <!-- साधा पारंपारिक फॉन्ट - हायलाईट काढला आहे -->
+        <div class="relation-text" data-mr="यांचा ज्येष्ठ पुत्र" data-en="Eldest Son">
           यांचा ज्येष्ठ पुत्र
         </div>
       </div>
@@ -708,19 +706,16 @@
         </div>
       </div>
 
-      <!-- नवीन मोठा मॅप व्ह्यू (Big Map View with "Open in Maps" Button like Attached Image) -->
+      <!-- नवीन मोठा मॅप व्ह्यू (Big Map View with "Open in Maps" Floating Button) -->
       <div class="big-map-box">
-        <!-- फ्लोटिंग 'Open in Maps' बटण -->
         <a 
           href="https://www.google.com/maps/search/?api=1&query=Zombadi,+Guhagar,+Ratnagiri" 
           target="_blank" 
           class="map-floating-btn"
-          id="floatingMapBtn"
         >
           <span data-mr="मॅप उघडा" data-en="Open in Maps">मॅप उघडा</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
         
-        <!-- गुगल मॅप्स थेट दृश्य -->
         <iframe 
           class="big-map-iframe"
           src="https://maps.google.com/maps?q=Zombadi%2C%20Guhagar%2C%20Ratnagiri&t=&z=13&ie=UTF8&iwloc=&output=embed"
